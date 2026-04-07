@@ -19,8 +19,8 @@ struct DigitalPin
 
 struct ArduinoMega
 {
-    DigitalPin pins[54];
-    uint16_t analogInputs[16];
+    DigitalPin pins[54]{};
+    uint16_t analogInputs[16]{};
     bool running = true;
 };
 
