@@ -4,12 +4,15 @@
 
 #pragma once
 
+struct ArduinoMega;
+
 class Enes100Class
 {
 public:
     static float getTheta();
     static float getX();
     static float getY();
+    static void setWheelDistanceCm(float distanceCm);
     static void println(const char* str);
     static void print(const char* str);
     static void println(float value);
@@ -18,8 +21,11 @@ public:
     static void print(unsigned short value);
     static void println();
     static void begin(const char* teamName, unsigned short teamType, int markerId, int roomNumber, int wifiModuleTX, int wifiModuleRX);
+    static void updatePoseEstimate();
 
 private:
+    static float getSignedWheelSpeedCmPerSec(const ArduinoMega& snapshot, unsigned int enablePin, unsigned int dirPin1, unsigned int dirPin2);
+
     static float x, y, theta;
     static const char* mTeamName;
     static unsigned short mTeamType;

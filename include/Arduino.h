@@ -21,6 +21,7 @@ struct ArduinoMega
 {
     DigitalPin pins[54]{};
     uint16_t analogInputs[16]{};
+    float theta = 0.0f;
     bool running = true;
 };
 
@@ -36,6 +37,7 @@ void analogWrite(unsigned int pin, unsigned int value);
 unsigned int analogRead(unsigned int pin);
 long pulseIn(unsigned short pin, unsigned short pulse);
 ArduinoMega getArduinoSnapshot();
+void setArduinoTheta(float theta);
 
 class SerialClass
 {

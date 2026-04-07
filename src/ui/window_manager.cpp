@@ -1,6 +1,7 @@
 #include "ui/window_manager.hpp"
 
 #include "Arduino.h"
+#include "Enes100.h"
 #include "h_main/pin_defns.hpp"
 
 #include <atomic>
@@ -424,6 +425,13 @@ void drawPinsUi()
         ImGui::EndTable();
     }
     drawMecanumWheelDisplay(snapshot);
+    Enes100.updatePoseEstimate();
+    ImGui::Text("Estimated pose (cm, rad)");
+    ImGui::Text("x: %+.2f", Enes100Class::getX());
+    ImGui::Text("y: %+.2f", Enes100Class::getY());
+    ImGui::Text("theta: %+.3f", Enes100Class::getTheta());
+    const ArduinoMega updatedSnapshot = getArduinoSnapshot();
+    ImGui::Text("arduino.theta: %+.3f", updatedSnapshot.theta);
     ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
     ImGui::End();
 }

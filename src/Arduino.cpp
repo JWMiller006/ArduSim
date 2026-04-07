@@ -62,6 +62,12 @@ ArduinoMega getArduinoSnapshot()
     return arduino;
 }
 
+void setArduinoTheta(float theta)
+{
+    std::lock_guard<std::mutex> lock(arduinoMutex);
+    arduino.theta = theta;
+}
+
 long pulseIn(unsigned short pin, unsigned short pulse)
 {
     // For now, just return a dummy value
