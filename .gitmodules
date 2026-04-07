@@ -1,0 +1,3 @@
+[submodule "proj_dir"]
+	path = proj_dir
+	url = git@github.com:/JWMiller006/ENES100_0502_Hydrobros.git
