@@ -161,7 +161,6 @@ float Enes100Class::getSignedWheelSpeedCmPerSec(const ArduinoMega& snapshot, uns
     }
 
     if (direction == 0) {
-        std::cout << "Read no direction from the pins" << std::endl;
         return 0.0f;
     }
 
