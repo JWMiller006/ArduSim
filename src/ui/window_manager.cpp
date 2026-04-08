@@ -426,7 +426,7 @@ void drawPinsUi()
     }
     drawMecanumWheelDisplay(snapshot);
     Enes100.updatePoseEstimate();
-    ImGui::Text("Estimated pose (cm, rad)");
+    ImGui::Text("Estimated pose (m, rad)");
     ImGui::Text("x: %+.2f", Enes100Class::getX());
     ImGui::Text("y: %+.2f", Enes100Class::getY());
     ImGui::Text("theta: %+.3f", Enes100Class::getTheta());
