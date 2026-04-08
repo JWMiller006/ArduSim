@@ -126,13 +126,13 @@ float Enes100Class::getTheta()
 float Enes100Class::getX()
 {
     updatePoseEstimate();
-    return x;
+    return x / 100.0f; // Convert from cm to m
 }
 
 float Enes100Class::getY()
 {
     updatePoseEstimate();
-    return y;
+    return y / 100.0f; // Convert from cm to m
 }
 
 void Enes100Class::setWheelDistanceCm(float distanceCm)
