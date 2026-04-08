@@ -66,9 +66,13 @@ To build and run the simulator, you need to have the prerequisites installed on 
         ```bash
         ./mega_sim
         ```
-    - On Windows:
+    - On Windows (assuming you built the MinSizeRel configuration with Visual Studio):
         ```bash
-        mega_sim.exe
+        ./MinSizeRel/mega_sim.exe
+        ```
+    - On Windows (assuming you built the MinSizeRel configuration with MinGW):
+        ```bash
+        ./mega_sim.exe
         ```
 2. As of right now, the simulator shows you the pins on the board and the directions of the wheels, but it doesn't actually simulate the movement of the OTV yet. 
     However, you can still use the simulator to see what is being printed to your pins on the Arduino without frying it, 
