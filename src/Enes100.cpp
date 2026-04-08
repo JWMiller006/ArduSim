@@ -75,9 +75,9 @@ void Enes100Class::begin(const char* teamName, unsigned short teamType, int mark
     mWifiModuleRX = wifiModuleRX;
     mTeamType = teamType;
 
-    x = 0.0f;
-    y = 0.0f;
-    theta = 0.0f;
+    x = 0.4f;
+    y = 1.6f;
+    theta = 0.4f;
     setArduinoTheta(theta);
     gLastPoseUpdate = std::chrono::steady_clock::now();
 }
